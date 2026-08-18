@@ -163,8 +163,8 @@
                 <span class="inline-block px-3 py-1 rounded-full bg-[#8B5CF6]/15 text-[#A78BFA] text-xs font-bold uppercase tracking-wide">
                     About me
                 </span>
-                <p class="relative text-2xl sm:text-3xl font-semibold leading-snug mt-4 mb-10 text-white">
-                    {{ $profile->bio ?? 'Add your bio from the admin panel — Portfolio Info section.' }}
+                <p class="relative text-base sm:text-lg font-medium leading-relaxed mt-4 mb-10 text-gray-300 max-w-2xl">
+                    {{ $profile->bio ?? 'I\'m a full-stack developer who builds complete, production-ready web applications from the ground up. My core strength is Django and Python on the backend, paired with Laravel and PHP for projects that call for that ecosystem — so I can move fluidly between stacks depending on what a project actually needs. I care about clean architecture, dependable deployments, and shipping software people can actually rely on, not just demos.' }}
                 </p>
 
                 <div class="relative grid grid-cols-3 gap-4 pt-8 border-t border-white/8">
