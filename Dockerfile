@@ -1,8 +1,7 @@
 FROM richarvey/nginx-php-fpm:3.1.6
 
-# Install Node.js so we can build frontend assets with Vite
-RUN curl -fsSL https://deb.nodesource.com/setup_20.x | bash - \
-    && apt-get install -y nodejs
+# Install Node.js so we can build frontend assets with Vite (Alpine base image)
+RUN apk add --no-cache nodejs npm
 
 COPY . .
 
