@@ -1,5 +1,9 @@
 FROM richarvey/nginx-php-fpm:3.1.6
 
+# Install Node.js so we can build frontend assets with Vite
+RUN curl -fsSL https://deb.nodesource.com/setup_20.x | bash - \
+    && apt-get install -y nodejs
+
 COPY . .
 
 ENV WEBROOT=/var/www/html/public
@@ -11,6 +15,9 @@ ENV COMPOSER_ALLOW_SUPERUSER=1
 ENV APP_ENV=production
 ENV APP_DEBUG=false
 ENV LOG_CHANNEL=stderr
+
+# Build frontend assets (creates public/build/manifest.json)
+RUN npm install && npm run build
 
 RUN mkdir -p /var/www/html/database \
     && touch /var/www/html/database/database.sqlite \
